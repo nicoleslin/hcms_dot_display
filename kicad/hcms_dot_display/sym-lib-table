@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "hcms_dot_display")(type "KiCad")(uri "${KIPRJMOD}/hcms_dot_display.kicad_sym")(options "")(descr ""))
+)
