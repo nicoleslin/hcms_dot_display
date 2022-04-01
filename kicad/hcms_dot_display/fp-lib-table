@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "hcms")(type "KiCad")(uri "${KIPRJMOD}/hcms.pretty")(options "")(descr ""))
+)
