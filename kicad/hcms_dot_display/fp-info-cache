@@ -1,4 +1,4 @@
-20163128203657800
+20166425951360519
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -85652,12 +85652,26 @@ varistor SIOV
 2
 2
 hcms
+3352T-1-503LF
+
+
+0
+3
+2
+hcms
 HCMS-2722
 
 
 0
 20
 20
+hcms
+R-667845
+
+
+0
+4
+2
 hcms
 board to board con
 
