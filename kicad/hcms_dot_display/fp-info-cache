@@ -1,4 +1,4 @@
-20119296494741793
+20122594716347591
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -85608,7 +85608,14 @@ hcms
 
 0
 3
-2
+3
+hcms
+213716-0001
+
+
+0
+20
+17
 hcms
 HCMS-2722
 
@@ -85624,9 +85631,16 @@ R-667845
 4
 2
 hcms
-board to board con
+input board to board con
 
 
 0
-20
-10
+22
+11
+hcms
+output board to board con
+
+
+0
+22
+11
