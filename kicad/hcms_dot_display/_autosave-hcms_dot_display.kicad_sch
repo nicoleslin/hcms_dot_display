@@ -3980,7 +3980,7 @@
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 8d1441a6-821f-419f-9338-76f0317eb8c7)
     (property "Reference" "SW2" (id 0) (at 84.455 187.325 0))
-    (property "Value" "SW_SPST" (id 1) (at 84.455 189.865 0))
+    (property "Value" "" (id 1) (at 84.455 189.865 0))
     (property "Footprint" "" (id 2) (at 84.455 193.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -4932,7 +4932,7 @@
       (reference "RV1") (unit 1) (value "R_Potentiometer") (footprint "hcms:TRIM_3352T-1-201LF")
     )
     (path "/8d1441a6-821f-419f-9338-76f0317eb8c7"
-      (reference "SW2") (unit 1) (value "SW_SPST") (footprint "")
+      (reference "SW2") (unit 1) (value "SW_SPST") (footprint "Button_Switch_SMD:SW_DIP_SPSTx03_Slide_KingTek_DSHP03TS_W7.62mm_P1.27mm")
     )
     (path "/74b91311-c571-4be4-b48f-44583fe63ca4"
       (reference "U1") (unit 1) (value "ATtiny824-SSF") (footprint "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm")
