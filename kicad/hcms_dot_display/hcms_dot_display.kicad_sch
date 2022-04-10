@@ -5338,7 +5338,7 @@
     (uuid d65faba5-fee5-4bc2-bec5-3b7099da5631)
     (property "Reference" "SW1" (id 0) (at 288.925 165.735 0))
     (property "Value" "SW_DIP_x03" (id 1) (at 288.925 168.275 0))
-    (property "Footprint" "" (id 2) (at 288.925 178.435 0)
+    (property "Footprint" "hcms:BPA03SB" (id 2) (at 288.925 178.435 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 288.925 178.435 0)
@@ -5914,7 +5914,7 @@
       (reference "RV1") (unit 1) (value "R_Potentiometer") (footprint "hcms:TRIM_3352T-1-201LF")
     )
     (path "/d65faba5-fee5-4bc2-bec5-3b7099da5631"
-      (reference "SW1") (unit 1) (value "SW_DIP_x03") (footprint "")
+      (reference "SW1") (unit 1) (value "SW_DIP_x03") (footprint "hcms:BPA03SB")
     )
     (path "/ec702393-b640-4b47-ba2e-5eeb75d59724"
       (reference "U1") (unit 1) (value "ATtiny826-SXX") (footprint "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm")
