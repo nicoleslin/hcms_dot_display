@@ -1,0 +1,32 @@
+Source:,C:\Users\nslni\Documents\projects\dot_display\hcms_dot_display\kicad\hcms_dot_display\hcms_dot_display.kicad_sch,,,,,,,,
+Date:,04/10/2022 08:59:22,,,,,,,,
+Tool:,Eeschema (6.0.2),,,,,,,,
+Generator:,C:\Users\nslni\Documents\KiCad\6.0\scripting\plugins/bom_csv_grouped_by_value_with_fp_and_mpn.py,,,,,,,,
+Component Count:,52,,,,,,,,
+"baselining qty for 5 control boards (3 yield + attrition), 10 display boards (6 yield + attrition + min price break)",,,,,,,,,
+passives for 15 boards,,,,,,,,,
+,,,,,,,,,
+Ref,Qnty,Value,Cmp name,Footprint,Description,Vendor,MPN,deviation,Qty in cart
+"C1, C9, C10, C11, ",4,10nF,C_Small,Capacitor_SMD:C_0603_1608Metric,"Unpolarized capacitor, small symbol",,06033C103JAT4A,,60
+"C2, C3, C6, C8, C12, ",5,100nF,C_Small,Capacitor_SMD:C_0603_1608Metric,"Unpolarized capacitor, small symbol",,C0603C104K3RAC7081,,100
+"C4, C5, ",2,47pF,C_Small,Capacitor_SMD:C_0603_1608Metric,"Unpolarized capacitor, small symbol",,06033C470KAT2A,,50
+"C7, ",1,4.7uF,C_Small,Capacitor_SMD:C_0603_1608Metric,"Unpolarized capacitor, small symbol",,GRM188C71C475KE21D,,15
+"D1, ",1,HCMS-272X,HCMS-272X,hcms:HCMS-2722,,,HCMS-2722,,N/A
+"J1, J3, ",2,Conn_01x12,Conn_01x12,hcms:board to board con top bot,"Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)",,,,N/A
+"J2, ",1,USB_C_Receptacle_USB2.0,USB_C_Receptacle_USB2.0,hcms:213716-0001,USB 2.0-only Type-C Receptacle connector,,213716-0001,,
+"J4, ",1,Conn_01x11_Female,Conn_01x11_Female,Connector_PinSocket_2.54mm:PinSocket_1x11_P2.54mm_Vertical,"Generic connector, single row, 01x11, script generated (kicad-library-utils/schlib/autogen/connector/)",,SMC-1-11-1-GT,,5
+"J5, ",1,Conn_01x11_Male,Conn_01x11_Male,Connector_PinHeader_2.54mm:PinHeader_1x11_P2.54mm_Vertical,"Generic connector, single row, 01x11, script generated (kicad-library-utils/schlib/autogen/connector/)",,PH1-11-UA,,10
+"J6, J7, ",2,Conn_01x12,Conn_01x12,hcms:board to board con left right,"Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)",,,,N/A
+"Q1, Q2, Q3, Q4, Q5, ",5,Q_PMOS_DSG,Q_PMOS_DSG,Package_TO_SOT_SMD:SOT-23,"P-MOSFET transistor, drain/source/gate",,DMP3099L-13 ,PJA3411_R1_00001,50
+"Q6, ",1,Q_PMOS_DSG,SI4425FDY,Package_SO:SO-8_5.3x6.2mm_P1.27mm,"P-Channel 30 V 12.7A (Ta), 18.3A (Tc) 2.3W (Ta), 4.8W (Tc) Surface Mount 8-SOIC",,SI4425FDY-T1-GE3 ,,5
+"R1, R6, R21, R22, ",4,0,R,Resistor_SMD:R_0603_1608Metric,Resistor,,AC0603JR-070RL,,100
+"R2, R7, R16, R17, ",4,DNP,R,Resistor_SMD:R_0603_1608Metric,Resistor,,,,N/A
+"R3, R10, R11, R12, R13, R14, ",6,200,R,Resistor_SMD:R_0603_1608Metric,Resistor,,RNCP0603FTD200R,,100
+"R4, R5, ",2,5.1k,R,Resistor_SMD:R_0603_1608Metric,Resistor,,RMCF0603FT5K10,,30
+"R8, R9, ",2,27,R,Resistor_SMD:R_0603_1608Metric,Resistor,,RMCF0603FT27R0,,30
+"R15, ",1,1k,R,Resistor_SMD:R_0603_1608Metric,Resistor,,RMCF0603FT1K00,,15
+"R18, R19, R20, ",3,10k,R,Resistor_SMD:R_0603_1608Metric,Resistor,,RMCF0603FT10K0,,100
+"RV1, ",1,R_Potentiometer,R_Potentiometer,hcms:TRIM_3352T-1-201LF,Potentiometer,,3352T-1-503LF,,5
+"SW1, ",1,SW_DIP_x03,SW_DIP_x03,hcms:BPA03SB,"3x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol",,BPA03SB,,5
+"U1, ",1,ATtiny826-SXX,ATtiny826-SXX,Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm,"20MHz, 8kB Flash, 512B SRAM, 512B EEPROM, debugWIRE, SOIC-20",,ATTINY826-SFR,ATTINY826-SF,10
+"U2, ",1,FT231XS,FT231XS,Package_SO:SSOP-20_3.9x8.7mm_P0.635mm,"Full Speed USB to Full Handshake UART, SSOP-20",,FT231XS-U,,5
