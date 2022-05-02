@@ -45,7 +45,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.508
+          "min_clearance": 0.254
         }
       },
       "diff_pair_dimensions": [
@@ -55,40 +55,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "hole_near_hole|164250000|125100000|c080982d-d07b-4c90-86c4-21323ac3b6b8|bbfa2d3b-e0cc-45cd-b432-668ba659b827",
-        "hole_near_hole|164733274|123933274|b74a5898-3d0d-421f-a76f-ccea34a06ae2|214581b5-e03b-462e-bb42-8a9398206ab6",
-        "hole_near_hole|164733274|123933274|cac77f8e-8907-4a48-8281-e68e467a0959|bbfa2d3b-e0cc-45cd-b432-668ba659b827",
-        "hole_near_hole|164733274|126266726|6470e223-638e-4b94-8982-9227b8769c9a|214581b5-e03b-462e-bb42-8a9398206ab6",
-        "hole_near_hole|165900000|123450000|d086da3a-9c71-46f3-a0b4-5777c45f4196|214581b5-e03b-462e-bb42-8a9398206ab6",
-        "hole_near_hole|165900000|125100000|214581b5-e03b-462e-bb42-8a9398206ab6|84379e79-e575-4382-b863-b465f1e9adfe",
-        "hole_near_hole|165900000|125100000|bbfa2d3b-e0cc-45cd-b432-668ba659b827|0470247a-bf28-42a3-b056-e2d19bdc7dea",
-        "hole_near_hole|165900000|125100000|bbfa2d3b-e0cc-45cd-b432-668ba659b827|1a2f54ed-efaf-4c24-bf5d-d36f5af8d90a",
-        "hole_near_hole|165900000|125100000|bbfa2d3b-e0cc-45cd-b432-668ba659b827|1e5017e0-0456-4160-97e2-c3125c5f182a",
-        "hole_near_hole|165900000|125100000|bbfa2d3b-e0cc-45cd-b432-668ba659b827|6fd35343-81f8-4327-9923-2b6634c1a1c1",
-        "hole_near_hole|165900000|125100000|bbfa2d3b-e0cc-45cd-b432-668ba659b827|8d41ebd9-bec6-4d49-acf4-54a77cae017e",
-        "hole_near_hole|165900000|125100000|bbfa2d3b-e0cc-45cd-b432-668ba659b827|b06c8715-52c4-42b6-833c-b270c92e2a77",
-        "hole_near_hole|165900000|126750000|b2e77bf8-5697-4fc5-a07f-3e4ed0691162|214581b5-e03b-462e-bb42-8a9398206ab6",
-        "hole_near_hole|167066726|123933274|5dddf57a-bdda-455b-9415-c8b9b0899b17|214581b5-e03b-462e-bb42-8a9398206ab6",
-        "hole_near_hole|167066726|126266726|426babc8-04c4-4bae-8929-a9f64908952a|214581b5-e03b-462e-bb42-8a9398206ab6",
-        "hole_near_hole|167550000|125100000|b8ff7cd2-7603-4b4c-87d0-1b12a8e8bedf|214581b5-e03b-462e-bb42-8a9398206ab6",
-        "hole_near_hole|191683274|125783274|cb737928-ce0a-4a65-9448-aa706e9d6fbf|bf5acd3a-bf5a-4755-a813-8f6d922a7719",
-        "hole_near_hole|191683274|125783274|f7c59d3b-150e-4fe4-9d7a-d8150b555fa0|ce628648-1b8d-49bf-882f-f998f76a2b80",
-        "hole_near_hole|191683274|128116726|8f058a9f-941d-4b15-895b-78546127f770|ce628648-1b8d-49bf-882f-f998f76a2b80",
-        "hole_near_hole|192850000|125300000|b0d58a21-2385-48d6-a26b-b74e39154302|ce628648-1b8d-49bf-882f-f998f76a2b80",
-        "hole_near_hole|192850000|126950000|bf5acd3a-bf5a-4755-a813-8f6d922a7719|61d63924-e606-4ab6-98a9-5b2daa963bfc",
-        "hole_near_hole|192850000|126950000|bf5acd3a-bf5a-4755-a813-8f6d922a7719|630147d2-1211-4edd-be08-b677207d7cde",
-        "hole_near_hole|192850000|126950000|bf5acd3a-bf5a-4755-a813-8f6d922a7719|6eec5446-537b-4741-85ed-1daae4587f8e",
-        "hole_near_hole|192850000|126950000|bf5acd3a-bf5a-4755-a813-8f6d922a7719|84a18d21-757d-4b48-a9fb-520432238e37",
-        "hole_near_hole|192850000|126950000|bf5acd3a-bf5a-4755-a813-8f6d922a7719|975fd264-9bd9-4691-858b-ffeefedd60f9",
-        "hole_near_hole|192850000|126950000|bf5acd3a-bf5a-4755-a813-8f6d922a7719|bf13cffd-0d7f-4425-85e4-db31d7bcf9e8",
-        "hole_near_hole|192850000|126950000|ce628648-1b8d-49bf-882f-f998f76a2b80|4890192f-4ca9-4006-b535-3dc64647ab9a",
-        "hole_near_hole|192850000|128600000|c21e578d-daf7-490f-9c62-e8e53fa6a05e|ce628648-1b8d-49bf-882f-f998f76a2b80",
-        "hole_near_hole|194016726|125783274|48a98276-a055-4403-9edc-ea658cee0774|ce628648-1b8d-49bf-882f-f998f76a2b80",
-        "hole_near_hole|194016726|128116726|06b679d7-2631-42d8-b59d-bdf320efb995|ce628648-1b8d-49bf-882f-f998f76a2b80",
-        "hole_near_hole|194500000|126950000|d3128ba1-e8fb-4427-bf6d-55b9d95f311c|ce628648-1b8d-49bf-882f-f998f76a2b80",
-        "hole_near_hole|194500000|126950000|f080171d-f552-4d1a-ab26-c9b21340dcff|bf5acd3a-bf5a-4755-a813-8f6d922a7719"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },

@@ -62,7 +62,11 @@
       35,
       36
     ],
+<<<<<<< Updated upstream
     "visible_layers": "0001000_00000000",
+=======
+    "visible_layers": "7fcfc77_80000001",
+>>>>>>> Stashed changes
     "zone_display_mode": 0
   },
   "meta": {
