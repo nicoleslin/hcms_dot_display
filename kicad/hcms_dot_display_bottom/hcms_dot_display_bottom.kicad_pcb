@@ -52,8 +52,8 @@
       (dielectric_constraints no)
     )
     (pad_to_mask_clearance 0)
-    (aux_axis_origin 162.75 129.75)
-    (grid_origin 162.75 129.75)
+    (aux_axis_origin 162.75 129.73)
+    (grid_origin 162.75 129.73)
     (pcbplotparams
       (layerselection 0x00010fc_ffffffff)
       (disableapertmacros false)
@@ -4979,10 +4979,10 @@
     (fill yes (thermal_gap 0.254) (thermal_bridge_width 0.508))
     (polygon
       (pts
-        (xy 198.25 129.75)
-        (xy 162.75 129.75)
-        (xy 162.8 110)
-        (xy 198.25 110)
+        (xy 198.25 129.759856)
+        (xy 162.75 129.729856)
+        (xy 162.8 110.009856)
+        (xy 198.25 110.009856)
       )
     )
     (filled_polygon
@@ -9699,10 +9699,10 @@
     (fill yes (thermal_gap 0.254) (thermal_bridge_width 0.508))
     (polygon
       (pts
-        (xy 198.25 110)
-        (xy 198.25 129.75)
-        (xy 162.75 129.75)
-        (xy 162.75 110)
+        (xy 198.25 109.98)
+        (xy 198.25 129.73)
+        (xy 162.75 129.73)
+        (xy 162.75 109.98)
       )
     )
     (filled_polygon
