@@ -40,9 +40,9 @@ void setup() {
 
   analogReadResolution(8);
   // since the COL_PWM FET is PMOS, the duty cycle is (1 - (3V3/5V))*255 = 86
-  analogWrite(COL_PWM_PIN, 86);
+  analogWrite(COL_PWM_PIN, 70);
 
-  digitalWrite(CLK_PIN, LOW);
+  digitalWrite(CLK_PIN, HIGH);
   digitalWrite(nBLNK_PIN, HIGH);
   digitalWrite(MCU_COL_1_PIN, HIGH);
   digitalWrite(MCU_COL_2_PIN, HIGH);
@@ -51,11 +51,14 @@ void setup() {
   digitalWrite(MCU_COL_5_PIN, HIGH);
 
   delay(1);
-  digitalWrite(MCU_DATA_PIN, HIGH);
-  delay(1);
-  digitalWrite(CLK_PIN, HIGH);
-  delay(2);
-  digitalWrite(CLK_PIN, LOW);
+  for(int i = 0; i < NUM_ROW*NUM_CHAR; i++)
+  {
+    digitalWrite(MCU_DATA_PIN, HIGH);
+    delay(1);
+    digitalWrite(CLK_PIN, LOW);
+    delay(2);
+    digitalWrite(CLK_PIN, HIGH);
+  }
   digitalWrite(MCU_COL_1_PIN, LOW);
 }
 

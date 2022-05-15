@@ -53,7 +53,7 @@ void setup() {
   // since the COL_PWM FET is PMOS, the duty cycle is (1 - (3V3/5V))*255 = 86
   analogWrite(COL_PWM_PIN, 86);
 
-  digitalWrite(CLK_PIN, LOW);
+  digitalWrite(CLK_PIN, HIGH);
   digitalWrite(nBLNK_PIN, HIGH);
   digitalWrite(MCU_COL_1_PIN, HIGH);
   digitalWrite(MCU_COL_2_PIN, HIGH);
@@ -77,10 +77,10 @@ void loop() {
     {
       digitalWrite(MCU_DATA_PIN, data_bit);
       delayMicroseconds(100);
-      digitalWrite(CLK_PIN, HIGH);
+      digitalWrite(CLK_PIN, LOW);
       data_bit = !data_bit; // toggle the data bit to achieve checkerboard
       delayMicroseconds(200);
-      digitalWrite(CLK_PIN, LOW);
+      digitalWrite(CLK_PIN, HIGH);
     }
     shift_us = micros() - col_start_time;
     // digitalWrite(nBLNK_PIN, HIGH);
