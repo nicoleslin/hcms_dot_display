@@ -20,6 +20,7 @@
 #define NUM_CHAR 16
 
 short data_bit = 0;
+uint8_t pot_val = 0;
 
 void setup() {
   // put your setup code here, to run once:
@@ -39,8 +40,8 @@ void setup() {
   pinMode(MCU_DATA_PIN, OUTPUT);
 
   analogReadResolution(8);
-  // since the COL_PWM FET is PMOS, the duty cycle is (1 - (3V3/5V))*255 = 86
-  analogWrite(COL_PWM_PIN, 70);
+  // since the COL_PWM FET is PMOS, the duty cycle is (1 - (3V/5V))*255 = 102
+  analogWrite(COL_PWM_PIN, 100);
 
   digitalWrite(CLK_PIN, HIGH);
   digitalWrite(nBLNK_PIN, HIGH);
@@ -50,16 +51,18 @@ void setup() {
   digitalWrite(MCU_COL_4_PIN, HIGH);
   digitalWrite(MCU_COL_5_PIN, HIGH);
 
-  delay(1);
+  delay(50);
   for(int i = 0; i < NUM_ROW*NUM_CHAR; i++)
   {
     digitalWrite(MCU_DATA_PIN, HIGH);
-    delay(1);
+    delay(50);
     digitalWrite(CLK_PIN, LOW);
-    delay(2);
+    delay(50);
     digitalWrite(CLK_PIN, HIGH);
   }
   digitalWrite(MCU_COL_1_PIN, LOW);
+  digitalWrite(MCU_COL_5_PIN, LOW);
+  delayMicroseconds(800);
 }
 
 void loop() {
@@ -68,5 +71,9 @@ void loop() {
   // load all row data for col 1 (7 bits per character, 16 characters, 112 bits)
   // illuminate col 1
   // repeat for col 2-5
-  
+
+  pot_val = analogRead(POT_PIN);
+  analogWrite(COL_PWM_PIN, map(pot_val, 0, 255, 255, 100));
+  delay(100);
+
 }
