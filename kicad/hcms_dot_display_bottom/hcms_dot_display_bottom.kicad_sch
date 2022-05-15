@@ -3626,7 +3626,7 @@
       (reference "R23") (unit 1) (value "0") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/50aa562e-fdb6-45a1-b911-10869fc0520f"
-      (reference "R?") (unit 1) (value "R") (footprint "")
+      (reference "R?") (unit 1) (value "10k") (footprint "")
     )
     (path "/26df86c2-e6da-4304-8085-b1a7b60b8ac0"
       (reference "RV1") (unit 1) (value "R_Potentiometer") (footprint "hcms:TRIM_3352T-1-201LF")
