@@ -15,16 +15,24 @@
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  // Serial.begin(9600);
   pinMode(SW_CONFIG_0_PIN, INPUT);
   pinMode(SW_CONFIG_1_PIN, INPUT);
   pinMode(SW_CONFIG_2_PIN, INPUT);
   pinMode(POT_PIN, INPUT);
   pinMode(CLK_PIN, OUTPUT);
+  pinMode(COL_PWM_PIN, OUTPUT);
+  pinMode(nBLNK_PIN, OUTPUT);
+  pinMode(MCU_COL_1_PIN, OUTPUT);
+  pinMode(MCU_COL_2_PIN, OUTPUT);
+  pinMode(MCU_COL_3_PIN, OUTPUT);
+  pinMode(MCU_COL_4_PIN, OUTPUT);
+  pinMode(MCU_COL_5_PIN, OUTPUT);
+  pinMode(MCU_DATA_PIN, OUTPUT);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-    Serial.println("hi");
-    delay(1000);
+  // Serial.println("hi");
+  // delay(1000);
 }
