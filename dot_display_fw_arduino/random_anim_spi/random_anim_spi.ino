@@ -45,6 +45,42 @@ typedef struct {
   uint8_t counter_level;
 } dot_t;
 
+void display_rand() {
+  spi_counter = num_dummy_bits;
+  first_spi_byte = 1;
+  int rand_bit;
+
+  for(int i = 0; i < num_row_bits; i++) {
+    rand_bit = random(0, 2);
+    if (first_spi_byte && (spi_counter < 8)) {
+      spi_byte = spi_byte | (rand_bit << spi_counter);
+      spi_counter = spi_counter + 1;
+    }
+
+    else if (first_spi_byte && !(spi_counter < 8)) {
+      first_spi_byte = 0;
+      
+      // send SPI transfer
+      SPI.transfer(spi_byte);
+      spi_counter = 0;
+      spi_byte = 0;
+    }
+
+    // not first_spi_byte, must be doing standard spi
+    else if (!first_spi_byte && (spi_counter < 8)) {
+      spi_byte = spi_byte | (rand_bit << spi_counter);
+      spi_counter = spi_counter + 1;
+    }
+
+    else {
+      // send SPI transfer
+      SPI.transfer(spi_byte);
+      spi_counter = 0;
+      spi_byte = 0;
+    }
+  }
+}
+
 void display_all_ones() {
   spi_counter = num_dummy_bits;
   first_spi_byte = 1;
@@ -168,7 +204,7 @@ void setup() {
 
   analogReadResolution(8);
   // since the COL_PWM FET is PMOS, the duty cycle is (1 - (3V3/5V))*255 = 86
-  analogWrite(COL_PWM_PIN, 86);
+  analogWrite(COL_PWM_PIN, 200);
   // digitalWrite(COL_PWM_PIN,LOW);
 
   // digitalWrite(CLK_PIN, HIGH);
@@ -189,7 +225,8 @@ void setup() {
   num_dummy_bits = num_row_bits % 8;
  
   // reset_display();
-  display_all_ones();
+  // display_all_ones();
+  display_rand();
 }
 
 void loop() {
@@ -200,4 +237,12 @@ void loop() {
   // repeat for col 2-5
 
   // display_chars(dot_matrix);
+
+  for (int i = 0; i < 5; i++){
+    digitalWrite(col_pin_array[i], LOW);
+    delayMicroseconds(50);
+    digitalWrite(col_pin_array[i], HIGH);
+  }
+  delayMicroseconds(1000);
+  
 }
