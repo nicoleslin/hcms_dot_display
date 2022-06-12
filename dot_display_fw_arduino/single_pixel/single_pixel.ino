@@ -22,6 +22,8 @@
 short data_bit = 0;
 uint8_t pot_val = 0;
 
+short col_pin_array[5] = {MCU_COL_1_PIN, MCU_COL_2_PIN, MCU_COL_3_PIN, MCU_COL_4_PIN, MCU_COL_5_PIN};
+
 void setup() {
   // put your setup code here, to run once:
   // Serial.begin(9600);
@@ -42,9 +44,11 @@ void setup() {
   analogReadResolution(8);
   // since the COL_PWM FET is PMOS, the duty cycle is (1 - (3V/5V))*255 = 102
   analogWrite(COL_PWM_PIN, 100);
+  //digitalWrite(COL_PWM_PIN,LOW);
+
 
   digitalWrite(CLK_PIN, HIGH);
-  digitalWrite(nBLNK_PIN, HIGH);
+  digitalWrite(nBLNK_PIN, LOW);
   digitalWrite(MCU_COL_1_PIN, HIGH);
   digitalWrite(MCU_COL_2_PIN, HIGH);
   digitalWrite(MCU_COL_3_PIN, HIGH);
@@ -52,16 +56,20 @@ void setup() {
   digitalWrite(MCU_COL_5_PIN, HIGH);
 
   delay(50);
-  for(int i = 0; i < NUM_ROW*NUM_CHAR; i++)
+  
+
+  
+  for(int i = 0; i < (NUM_ROW*NUM_CHAR); i++)
   {
-    digitalWrite(MCU_DATA_PIN, HIGH);
-    delay(50);
+    digitalWrite(MCU_DATA_PIN, HIGH); 
+
+    delay(5);
     digitalWrite(CLK_PIN, LOW);
-    delay(50);
+    delay(5);
     digitalWrite(CLK_PIN, HIGH);
   }
-  digitalWrite(MCU_COL_1_PIN, LOW);
-  digitalWrite(MCU_COL_5_PIN, LOW);
+  digitalWrite(nBLNK_PIN, HIGH);
+  // digitalWrite(MCU_COL_5_PIN, LOW);
   delayMicroseconds(800);
 }
 
@@ -72,8 +80,17 @@ void loop() {
   // illuminate col 1
   // repeat for col 2-5
 
+  for(int i=0; i< NUM_COL; i++){
+      digitalWrite(col_pin_array[i], LOW);
+      delay(500);
+      digitalWrite(col_pin_array[i], HIGH);
+
+  }
   pot_val = analogRead(POT_PIN);
   analogWrite(COL_PWM_PIN, map(pot_val, 0, 255, 255, 100));
-  delay(100);
-
+  delay(5);
 }
+
+
+
+

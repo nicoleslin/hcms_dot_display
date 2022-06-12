@@ -20,7 +20,8 @@
 #define NUM_CHAR 16
 #define MAX_PERIOD_US 1000 // actual max is 2000
 
-uint8_t n_pot_val = 0;
+uint8_t pot_val = 0;
+uint8_t blink_val = 0;
 unsigned long pot_start_time = 0;
 
 unsigned long col_start_time = 0;
@@ -31,6 +32,81 @@ uint16_t num_row_bits = NUM_ROW * NUM_CHAR;
 short EEPROM_WRITE_FLAG = 1;
 unsigned long shift_us = 0;
 short data_bit = 0;
+
+uint8_t charBLANK[NUM_ROW][NUM_COL] = {
+  {0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0},
+  {0, 0, 0, 0, 0},
+  {0, 0, 0, 0, 0},
+  {0, 0, 0, 0, 0},
+  {0, 0, 0, 0, 0}
+};
+
+
+
+
+uint8_t aidan_phillips[NUM_CHAR][NUM_ROW][NUM_COL] = {0};
+
+
+
+void reset_display(){
+  for(int i = 0; i < num_row_bits; i++) {
+    digitalWrite(CLK_PIN, HIGH);
+    delayMicroseconds(2);
+    digitalWrite(MCU_DATA_PIN, LOW);
+    delayMicroseconds(2);
+    digitalWrite(CLK_PIN, LOW);
+    delayMicroseconds(2);
+  }
+}
+
+void display_chars(uint8_t char_matrix[NUM_CHAR][NUM_ROW][NUM_COL]){
+  for(int i = 0; i < NUM_COL; i++)
+  {
+    digitalWrite(CLK_PIN, HIGH);
+    delayMicroseconds(2);
+    for(int j = NUM_CHAR; j > 0; j--) 
+    {
+      for(int k = 0; k < NUM_ROW; k++)
+      {
+        digitalWrite(MCU_DATA_PIN, char_matrix[j-1][NUM_ROW-k-1][i]);
+        delayMicroseconds(2);
+        digitalWrite(CLK_PIN, LOW);
+        delayMicroseconds(2);
+        digitalWrite(CLK_PIN, HIGH);
+        delayMicroseconds(2);
+      }
+    }
+    
+    digitalWrite(col_pin_array[i], LOW);
+    delayMicroseconds(blink_val);
+    digitalWrite(col_pin_array[i], HIGH);
+  }
+}
+
+
+void display_char(uint8_t char_matrix[NUM_ROW][NUM_COL]){
+  for(int i = 0; i < NUM_COL; i++)
+  {
+    digitalWrite(CLK_PIN, HIGH);
+    delayMicroseconds(10);
+    for(int k = 0; k < NUM_ROW; k++)
+    {
+      digitalWrite(MCU_DATA_PIN, char_matrix[k][i]);
+      delayMicroseconds(10);
+      digitalWrite(CLK_PIN, LOW);
+      delayMicroseconds(10);
+      digitalWrite(CLK_PIN, HIGH);
+      delayMicroseconds(10);
+     }
+    
+   digitalWrite(col_pin_array[i], LOW);
+   delayMicroseconds(blink_val);
+   digitalWrite(col_pin_array[i], HIGH);
+
+  }
+}
 
 void setup() {
   // put your setup code here, to run once:
@@ -61,6 +137,9 @@ void setup() {
   digitalWrite(MCU_COL_3_PIN, HIGH);
   digitalWrite(MCU_COL_4_PIN, HIGH);
   digitalWrite(MCU_COL_5_PIN, HIGH);
+
+  reset_display();
+
 }
 
 void loop() {
@@ -70,31 +149,8 @@ void loop() {
   // illuminate col 1
   // repeat for col 2-5
 
-  for(int i = 0; i < NUM_COL; i++)
-  {
-    data_bit = 0;
-    col_start_time = micros();
-    for(int j = 0; j < num_row_bits; j++) 
-    {
-      digitalWrite(MCU_DATA_PIN, data_bit);
-      delayMicroseconds(100);
-      digitalWrite(CLK_PIN, LOW);
-      data_bit = !data_bit; // toggle the data bit to achieve checkerboard
-      delayMicroseconds(200);
-      digitalWrite(CLK_PIN, HIGH);
-    }
-    shift_us = micros() - col_start_time;
-    // digitalWrite(nBLNK_PIN, HIGH);
-    digitalWrite(col_pin_array[i], LOW);
-    if (EEPROM_WRITE_FLAG == 1){
-      EEPROM.write(EEPROM_START_ADDR, shift_us);
-      EEPROM_WRITE_FLAG = 0;
-    }
-    delayMicroseconds(col_on_us);
-    digitalWrite(col_pin_array[i], HIGH);
-    // digitalWrite(nBLNK_PIN, LOW);
-    // delayMicroseconds(MAX_PERIOD_US - col_on_us);
-  }
-  
-  
+  display_chars(aidan_phillips);
+
+  pot_val = analogRead(POT_PIN);
+  blink_val = map(pot_val, 0, 255, 50, 400);
 }
